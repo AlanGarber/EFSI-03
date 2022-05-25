@@ -51,6 +51,13 @@ let Refrescar=()=>{
 }
 
 let Modal=(id)=>{
+    console.log(id);
+    for(i=0; i<arrayTareas.length;i++){
+        let Ver = arrayTareas[i].id
+        if(id==Ver){
+            pos= i
+        }
+    }
     document.getElementById("areaModalDescripcion").innerHTML=`<div class="modal fade" id="texto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -63,8 +70,8 @@ let Modal=(id)=>{
                 </div>
             </div>
             <div class="modal-body">
-                <input type="text" class="form-control" id="tituloTarea" placeholder="${arrayTareas[id].titulo}" readonly><br>
-                <textarea name="textarea" rows="5" cols="25" class="form-control" id="descripcionTarea" placeholder="${arrayTareas[id].descripcion}"></textarea>
+                <input type="text" class="form-control" id="tituloTarea" placeholder="${arrayTareas[pos].titulo}" readonly><br>
+                <textarea name="textarea" rows="5" cols="25" class="form-control" id="descripcionTarea" placeholder="${arrayTareas[pos].descripcion}"></textarea>
             </div>
             <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn btn-primary">Cerrar</button>
