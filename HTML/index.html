@@ -20,7 +20,8 @@
                         <button type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal">
                             Agregar tarea
                         </button>
-                        <button type="button" onclick="Refrescar()" class="btn btn-dark text-center">Tarea mas rápida</button>
+                        <button type="button" onclick="fastestTask()" class="btn btn-dark text-center">Tarea mas rápida</button>
+                        <div class="lista" id="fastest"></div>
                     </div>
                 </div>
             </div>
@@ -36,11 +37,11 @@
                             </div>
                         </div>
                         <div class="modal-body">
-                            <input type="text" class="form-control" id="tituloTarea" placeholder="Titulo" maxlength="13"><br>
+                            <input type="text" class="form-control" id="tituloTarea" onkeyup="validar()" placeholder="Titulo" maxlength="13"><br>
                             <textarea name="textarea" rows="5" cols="25" class="form-control" id="descripcionTarea" placeholder="Descripcion"></textarea>
                         </div>
-                        <div class="modal-footer">
-                        <button type="button" data-dismiss="modal" onclick="AgregarTarea(document.getElementById('tituloTarea').value, document.getElementById('descripcionTarea').value)" class="btn btn-primary">Guardar</button>
+                        <div class="modal-footer" id="boton">
+                        <button type="button" data-dismiss="modal" onclick="AgregarTarea(document.getElementById('tituloTarea').value, document.getElementById('descripcionTarea').value)" class="btn btn-primary" disabled>Guardar</button>
                         </div>
                     </div>
                 </div>
